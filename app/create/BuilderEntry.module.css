@@ -1,0 +1,220 @@
+.page {
+  --system-accent: var(--gold);
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--system-accent) 12%, transparent), transparent 25rem),
+    var(--ink);
+}
+
+.page::before,
+.page::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.page::before {
+  inset: 0;
+  opacity: 0.25;
+  background-image:
+    linear-gradient(90deg, transparent 49.9%, var(--line) 50%, transparent 50.1%),
+    linear-gradient(0deg, transparent 49.9%, var(--line) 50%, transparent 50.1%);
+  background-size: 7rem 7rem;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 68%);
+}
+
+.page::after {
+  width: 34rem;
+  height: 34rem;
+  top: 50%;
+  left: 50%;
+  border: 1px solid color-mix(in srgb, var(--system-accent) 20%, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -45%);
+  box-shadow: 0 0 0 5rem rgb(255 255 255 / 1.5%), 0 0 0 10rem rgb(255 255 255 / 1%);
+}
+
+.pathfinder {
+  --system-accent: #83a893;
+}
+
+.dnd {
+  --system-accent: #c77d65;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 3rem, 47rem);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vh, 6.5rem) 0 5rem;
+  text-align: center;
+}
+
+.orbit {
+  width: 7.5rem;
+  aspect-ratio: 1;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--system-accent);
+  border-radius: 50%;
+  color: var(--system-accent);
+  box-shadow: 0 0 0 0.8rem color-mix(in srgb, var(--system-accent) 5%, transparent);
+}
+
+.orbit span {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--system-accent);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  margin: 0;
+  color: var(--parchment);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.1rem, 7vw, 5.7rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.systemName {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.systemName strong {
+  color: var(--parchment);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.systemName span {
+  color: var(--system-accent);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.note {
+  max-width: 39rem;
+  margin: 1.4rem auto 0;
+  color: var(--muted-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.status {
+  width: min(100%, 31rem);
+  margin: 2.5rem auto 0;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  background: rgb(255 255 255 / 3%);
+  text-align: left;
+}
+
+.statusMark {
+  width: 2.4rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--system-accent);
+  border-radius: 50%;
+  color: var(--system-accent);
+  font-size: 0.65rem;
+}
+
+.status > span:last-child {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.status strong {
+  color: var(--parchment);
+  font-size: 0.84rem;
+}
+
+.status small {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.actions {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primaryAction {
+  padding: 0.9rem 1.1rem;
+  background: var(--parchment);
+  color: var(--ink);
+}
+
+.secondaryAction {
+  color: var(--muted-light);
+}
+
+.primaryAction:hover {
+  background: #f7f0df;
+}
+
+.secondaryAction:hover {
+  color: var(--parchment);
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 5px;
+}
+
+@media (max-width: 540px) {
+  .content {
+    width: min(100% - 2rem, 47rem);
+    padding-top: 3.2rem;
+  }
+
+  .orbit {
+    width: 6rem;
+  }
+
+  .content h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
