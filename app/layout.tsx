@@ -8,15 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Архив Героев',
     description: 'Твои герои. Их судьбы. Один архив.',
-    images: [{ url: '/og.png', width: 1730, height: 909, alt: 'Архив Героев.' }],
     locale: 'ru_RU',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Архив Героев',
     description: 'Твои герои. Их судьбы. Один архив.',
-    images: ['/og.png'],
   },
 };
 

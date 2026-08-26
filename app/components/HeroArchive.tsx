@@ -23,16 +23,10 @@ type HeroArchiveProps = {
 export function HeroArchive({ view = 'home' }: HeroArchiveProps) {
   return (
     <main className={styles.archive}>
-      <div className={styles.mist} aria-hidden="true" />
-      <div className={styles.stars} aria-hidden="true" />
-      <div className={styles.grimoireArt} aria-hidden="true" />
-
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Архив Героев — на главную">
-          <span className={styles.brandSigil} aria-hidden="true">✦</span>
           <strong>Архив Героев</strong>
         </Link>
-        <span className={styles.volume}>Свиток I · 2026</span>
       </header>
 
       {view === 'home' ? <HomeView /> : <SystemsView />}
