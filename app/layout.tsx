@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL('https://character-manager-rpg.kharseevvlad.chatgpt.site'),
   title: 'Character Manager — менеджер персонажей для НРИ',
   description: 'Создавайте персонажей для Pathfinder 2e и Dungeons & Dragons 5e и храните всё важное в одном месте.',
   openGraph: {
