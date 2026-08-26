@@ -1,0 +1,411 @@
+.archive {
+  --surface: #0d0d18;
+  --surface-hover: #1a1730;
+  --line: rgb(153 132 201 / 18%);
+  --line-strong: rgb(168 132 226 / 38%);
+  --text: #eeeaf7;
+  --muted: #918ba2;
+  --dim: #625e70;
+  --accent: #9c70dd;
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% 18%, rgb(55 42 101 / 18%), transparent 34rem),
+    linear-gradient(145deg, #090a13 0%, #0d0c19 52%, #080811 100%);
+}
+
+.archive::before {
+  content: '';
+  position: absolute;
+  inset: 1rem;
+  z-index: -1;
+  border: 1px solid rgb(151 126 191 / 8%);
+  pointer-events: none;
+}
+
+.header {
+  min-height: 7rem;
+  padding: 2rem clamp(1.5rem, 6vw, 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.home {
+  width: min(100%, 78rem);
+  min-height: calc(100svh - 11.5rem);
+  margin: auto;
+  padding: clamp(3rem, 7vh, 6rem) clamp(1.5rem, 5vw, 4rem) 3rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: clamp(3.5rem, 8vh, 6rem);
+}
+
+.heroCopy {
+  align-self: center;
+  text-align: center;
+  animation: appear 500ms ease both;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #8f7aa8;
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 2.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(147 107 193 / 48%));
+}
+
+.eyebrow span:last-child {
+  background: linear-gradient(90deg, rgb(147 107 193 / 48%), transparent);
+}
+
+.heroCopy h1,
+.systemsHeading h1 {
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.heroCopy h1 {
+  font-size: clamp(4.2rem, 9vw, 8rem);
+  line-height: 0.88;
+}
+
+.heroCopy h1 em {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lead {
+  max-width: 34rem;
+  margin: 2rem auto 0;
+  color: var(--muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.runeDivider {
+  width: 10rem;
+  margin: 1.6rem auto 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #79569d;
+  font-size: 0.5rem;
+}
+
+.runeDivider span {
+  height: 1px;
+  flex: 1;
+  background: var(--line-strong);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  background: rgb(11 11 22 / 70%);
+  animation: appear 500ms 80ms ease both;
+}
+
+.actionCard {
+  min-height: 9.25rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.6rem clamp(1.25rem, 3vw, 2.2rem);
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+.createCard {
+  border-right: 1px solid var(--line);
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.createCard:hover {
+  background: var(--surface-hover);
+}
+
+.createCard:focus-visible,
+.backLink:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.loadCard {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.actionNumber {
+  align-self: start;
+  color: var(--dim);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.7rem;
+}
+
+.actionIcon {
+  width: 3.25rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.actionText {
+  min-width: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.actionText small,
+.systemInfo small {
+  color: #8d70a8;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.actionText strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.actionText em,
+.systemInfo em {
+  color: var(--dim);
+  font-size: 0.65rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 1.35rem;
+  transition: transform 180ms ease;
+}
+
+.createCard:hover .arrow {
+  transform: translateX(0.3rem);
+}
+
+.locked {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.46rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footer {
+  min-height: 4.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #514d5e;
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer i {
+  width: 0.2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #674985;
+}
+
+.systems {
+  width: min(100%, 72rem);
+  min-height: calc(100svh - 11.5rem);
+  margin: auto;
+  padding: clamp(2.5rem, 6vh, 5rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.backLink:hover {
+  color: var(--accent);
+}
+
+.systemsHeading {
+  max-width: 42rem;
+  margin: clamp(3rem, 7vh, 5rem) auto 3rem;
+  text-align: center;
+}
+
+.systemsHeading h1 {
+  font-size: clamp(3.7rem, 8vw, 6.5rem);
+  line-height: 1;
+}
+
+.systemsHeading > p:last-child {
+  max-width: 35rem;
+  margin: 1.4rem auto 0;
+  color: var(--muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+}
+
+.systemGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.systemCard {
+  min-height: 13rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  color: inherit;
+  background: var(--surface);
+  font: inherit;
+  text-align: left;
+  cursor: not-allowed;
+  opacity: 0.64;
+}
+
+.systemMark {
+  width: 4.5rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  color: var(--accent);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.65rem;
+}
+
+.systemInfo {
+  min-width: 0;
+  display: grid;
+  gap: 0.38rem;
+}
+
+.systemInfo strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.systemLock {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--dim);
+  font-size: 0.46rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(0.65rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+  .archive { overflow-y: auto; }
+  .header { min-height: 6rem; padding-inline: 1.5rem; }
+  .home { min-height: auto; gap: 3rem; padding-top: 4rem; }
+  .actions,
+  .systemGrid { grid-template-columns: 1fr; }
+  .createCard { border-right: 0; border-bottom: 1px solid var(--line); }
+  .systemCard { min-height: 11rem; }
+}
+
+@media (max-width: 520px) {
+  .archive::before { inset: 0.55rem; }
+  .header { padding: 1.25rem; }
+  .brand strong { font-size: 0.82rem; letter-spacing: 0.1em; }
+  .home { padding: 3rem 1rem 2rem; }
+  .heroCopy h1 { font-size: clamp(3.7rem, 19vw, 5.4rem); line-height: 0.92; }
+  .lead { padding-inline: 0.75rem; }
+  .actionCard { grid-template-columns: auto 1fr auto; gap: 0.9rem; padding: 1.3rem 1rem; }
+  .actionNumber { display: none; }
+  .actionIcon { width: 2.8rem; }
+  .actionText em { display: none; }
+  .systems { padding-inline: 1rem; }
+  .systemCard { padding: 1.35rem 1rem; }
+  .systemMark { width: 3.6rem; }
+  .systemLock { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCopy,
+  .actions { animation: none; }
+  .createCard,
+  .arrow { transition: none; }
+}
