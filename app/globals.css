@@ -1,14 +1,21 @@
 @import 'tailwindcss';
 
 :root {
-  --ink: #151a18;
-  --parchment: #efe6d2;
-  --gold: #a9864b;
-  --gold-light: #d4b77d;
-  --muted: #7d8780;
-  --muted-light: #aeb7b1;
-  --line: rgb(239 230 210 / 13%);
-  --focus: #e6bd6a;
+  --ink: #09060f;
+  --night: #11091a;
+  --stone: #1d1227;
+  --stone-light: #2a1838;
+  --parchment: #f0e9dc;
+  --gold: #9b8152;
+  --gold-light: #c7ad78;
+  --violet-deep: #2c1241;
+  --violet: #7c3aed;
+  --violet-bright: #b56cff;
+  --violet-light: #d6b9ff;
+  --muted: #776d80;
+  --muted-light: #aaa0b2;
+  --line: rgb(205 181 232 / 15%);
+  --focus: #c88cff;
   color-scheme: dark;
 }
 
@@ -17,6 +24,7 @@
 }
 
 html {
+  min-width: 320px;
   background: var(--ink);
 }
 
@@ -34,6 +42,6 @@ button {
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--violet);
+  color: white;
 }

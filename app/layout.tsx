@@ -3,19 +3,19 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://character-manager-rpg.kharseevvlad.chatgpt.site'),
-  title: 'Character Manager — менеджер персонажей для НРИ',
-  description: 'Создавайте персонажей для Pathfinder 2e и Dungeons & Dragons 5e и храните всё важное в одном месте.',
+  title: 'Архив Героев — персонажи для НРИ',
+  description: 'Создавайте и храните героев для Pathfinder 2e и Dungeons & Dragons 5e в мрачном космическом архиве.',
   openGraph: {
-    title: 'Character Manager',
-    description: 'Твои герои. Твои истории.',
-    images: [{ url: '/og.png', width: 1743, height: 910, alt: 'Character Manager — Твои герои. Твои истории.' }],
+    title: 'Архив Героев',
+    description: 'Твои герои. Их судьбы. Один архив.',
+    images: [{ url: '/og.png', width: 1730, height: 909, alt: 'Архив Героев.' }],
     locale: 'ru_RU',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Character Manager',
-    description: 'Твои герои. Твои истории.',
+    title: 'Архив Героев',
+    description: 'Твои герои. Их судьбы. Один архив.',
     images: ['/og.png'],
   },
 };
